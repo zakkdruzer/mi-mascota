@@ -109,3 +109,26 @@ console.log("")
 mascota.verEstado();
 
 console.log("")
+
+console.log("%cEtapa 6 · Clon VIP (spread) y destructuring", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const mascotaVIP = { ...mascota, accesorio: ..., felicidad: 100 };
+// Muestra mascotaVIP.felicidad y mascota.felicidad (debe seguir distinta)
+const mascotaVIP = {
+  ...mascota,
+  accesorio: "corona 👑",
+  felicidad: 100,
+};
+
+console.log(
+  `VIP felicidad: ${mascotaVIP.felicidad} | accesorio: ${mascotaVIP.accesorio}`
+);
+console.log(`Original felicidad: ${mascota.felicidad}`);
+
+// const { nombre, tipo } = mascota;
+const { nombre, tipo } = mascota;
+// Muestra nombre y tipo
+console.log(`Mi mascota: ${nombre} (${tipo})`);
+
+console.log("")
