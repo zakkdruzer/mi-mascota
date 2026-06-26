@@ -132,3 +132,43 @@ const { nombre, tipo } = mascota;
 console.log(`Mi mascota: ${nombre} (${tipo})`);
 
 console.log("")
+
+console.log("%c🏆 Jefe Final · El menú do/while", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// let opcion;
+// do {
+//   console.log("\n=== " + mascota.nombre + " ===");
+//   console.log("1) Alimentar 2) Jugar 3) Dormir 4) Ver estado 5) Salir");
+//   opcion = prompt("Opción:");   // (o pedir, para probar)
+//   if (opcion === "1") mascota.alimentar();
+//   else if (...) ...
+// } while (opcion !== "5");
+let opcion;
+
+do {
+  console.log(`\n=== ${mascota.nombre} ===`);
+  opcion = prompt(`Ingresa una opcion:
+                    1) Alimentar
+                    2) Jugar      
+                    3) Dormir  
+                    4) Ver estado   
+                    5) Salir     
+    `); // o pedir("Opción:")
+
+  if (opcion === "1") {
+    mascota.alimentar();
+  } else if (opcion === "2") {
+    mascota.jugar();
+  } else if (opcion === "3") {
+    mascota.dormir();
+  } else if (opcion === "4") {
+    mascota.verEstado();
+  } else if (opcion === "5") {
+    console.log(`¡Cuídate, ${mascota.nombre}! 👋`);
+  } else {
+    console.log("Opción inválida, intenta de nuevo.");
+  }
+} while (opcion !== "5");
+
+console.log("")
