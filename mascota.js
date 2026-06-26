@@ -9,10 +9,47 @@ const mascota = {
   energia: 50,     // 0 = agotado, 100 = lleno de energía
 
   // En las próximas etapas agregarás métodos AQUÍ dentro.
+  describir() {
+    return `${this.nombre} es un ${this.tipo}.`;
+  },
+
+  alimentar() {
+    this.hambre = Math.max(0, this.hambre - 20);
+    console.log(`${this.nombre} comió 🍖 — Hambre: ${this.hambre}`);
+  },
 };
 
 // Muestra el nombre (punto) y el tipo (corchete)
 console.log("Nombre:", mascota.nombre);        // notación punto
 console.log("Tipo:", mascota["tipo"]);         // notación corchete
+
+console.log("")
+
+console.log("%cEtapa 2 · El método describir() y this", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// Dentro de las llaves del objeto, después de los stats:
+//   describir() {
+//     return `${this.nombre} ...`;
+//   },
+
+
+// Fuera del objeto: invoca y muestra mascota.describir()
+console.log(mascota.describir());
+
+console.log("")
+
+console.log("%cEtapa 3 · alimentar() (cambiar el estado)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+//   alimentar() {
+//     this.hambre = Math.max(0, this.hambre - 20);
+//     console.log(...);   // muestra el nuevo valor
+//   },
+
+
+// Fuera: mascota.alimentar();  dos veces
+mascota.alimentar(); // desde 50 → 30
+mascota.alimentar(); // desde 30 → 10
 
 console.log("")
