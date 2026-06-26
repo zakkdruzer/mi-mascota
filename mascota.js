@@ -21,8 +21,9 @@ const mascota = {
   jugar() {
     this.felicidad = Math.min(100, this.felicidad + 20);
     this.energia = Math.max(0, this.energia - 15);
+    this.hambre = Math.min(100, this.hambre + 10);
     console.log(
-      `${this.nombre} jugó 🎾 — Felicidad: ${this.felicidad}, Energía: ${this.energia}`
+      `${this.nombre} jugó 🎾 — Felicidad: ${this.felicidad}, Energía: ${this.energia}, Hambre: ${this.hambre}`
     );
   },
 
