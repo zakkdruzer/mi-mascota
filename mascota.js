@@ -30,6 +30,14 @@ const mascota = {
     this.energia = Math.min(100, this.energia + 30);
     console.log(`${this.nombre} durmió 😴 — Energía: ${this.energia}`);
   },
+
+  verEstado() {
+    Object.entries(this)
+      .filter(([clave, valor]) => typeof valor === "number")
+      .forEach(([clave, valor]) => {
+        console.log(`${clave}: ${valor}`);
+      });
+  },
 };
 
 // Muestra el nombre (punto) y el tipo (corchete)
@@ -84,5 +92,20 @@ console.log("")
 // Fuera: mascota.jugar();  mascota.dormir();
 mascota.jugar();   // felicidad: 70, energía: 35
 mascota.dormir();  // energía: 65
+
+console.log("")
+
+console.log("%cEtapa 5 · Ver todos los stats (Object.entries)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+//   verEstado() {
+//     Object.entries(this)
+//       .filter(([clave, valor]) => typeof valor === "number")
+//       .forEach(([clave, valor]) => console.log(...));
+//   },
+
+
+// Fuera: mascota.verEstado();
+mascota.verEstado();
 
 console.log("")
