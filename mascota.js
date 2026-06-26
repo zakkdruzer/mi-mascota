@@ -17,6 +17,19 @@ const mascota = {
     this.hambre = Math.max(0, this.hambre - 20);
     console.log(`${this.nombre} comió 🍖 — Hambre: ${this.hambre}`);
   },
+
+  jugar() {
+    this.felicidad = Math.min(100, this.felicidad + 20);
+    this.energia = Math.max(0, this.energia - 15);
+    console.log(
+      `${this.nombre} jugó 🎾 — Felicidad: ${this.felicidad}, Energía: ${this.energia}`
+    );
+  },
+
+  dormir() {
+    this.energia = Math.min(100, this.energia + 30);
+    console.log(`${this.nombre} durmió 😴 — Energía: ${this.energia}`);
+  },
 };
 
 // Muestra el nombre (punto) y el tipo (corchete)
@@ -51,5 +64,25 @@ console.log("")
 // Fuera: mascota.alimentar();  dos veces
 mascota.alimentar(); // desde 50 → 30
 mascota.alimentar(); // desde 30 → 10
+
+console.log("")
+
+console.log("%cEtapa 4 · jugar() y dormir()", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+//   jugar() {
+//     this.felicidad = Math.min(100, this.felicidad + 20);
+//     this.energia  = Math.max(0, this.energia - 15);
+//     console.log(...);
+//   },
+//   dormir() {
+//     this.energia = Math.min(100, this.energia + 30);
+//     console.log(...);
+//   },
+
+
+// Fuera: mascota.jugar();  mascota.dormir();
+mascota.jugar();   // felicidad: 70, energía: 35
+mascota.dormir();  // energía: 65
 
 console.log("")
